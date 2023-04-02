@@ -1,0 +1,141 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+//COLORS
+$color-primary: #a7727c;
+$color-primary-dark: rgb(134, 91, 99);
+$color-secondary: #eddbc7;
+$color-tertiary: #f8ead8;
+$color-tertiary-light: #faf0e4;
+$color-white: rgb(249, 245, 231);
+
+//FONT-SIZE
+$fs-smaller: 1.2rem;
+$fs-small: 1.6rem;
+$fs-base: 2rem;
+$fs-medium: 4rem;
+$fs-big: 6rem;
+
+body {
+  font-family: "Montserrat", "Great Vibes", sans-serif;
+  color: $color-primary-dark;
+  font-size: $fs-base;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: $color-white;
+  gap: 10rem;
+  background: linear-gradient(
+    rgba($color-primary, 0.2) 0%,
+    rgba($color-primary, 0.2) 100%
+  );
+  position: relative;
+  height: 100vh;
+  box-shadow: 0px 8px 20px -5px #54393e;
+
+  &__bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+
+    &--content {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: 40%;
+    }
+  }
+
+  &__heading {
+    &--main {
+      font-family: "Great Vibes";
+      font-weight: 600;
+      font-size: $fs-big;
+      color: $color-white;
+      text-align: center;
+      & span {
+        display: block;
+      }
+    }
+
+    &--secondary {
+      font-family: "Montserrat";
+      text-align: center;
+      font-size: $fs-base;
+    }
+  }
+
+  &__counter {
+    display: grid;
+    grid-template-columns: repeat(7, min-content);
+    justify-items: center;
+    align-items: center;
+    column-gap: 0.3rem;
+
+    &--hours-text {
+      grid-column: 3/4;
+    }
+    &--mins-text {
+      grid-column: 5/6;
+    }
+    &--secs-text {
+      grid-column: 7/8;
+    }
+
+    & > span {
+      font-size: $fs-medium;
+    }
+
+    & > p {
+      font-size: $fs-smaller;
+    }
+  }
+}
+
+.main {
+  height: 1000px;
+  background-color: $color-tertiary-light;
+
+  .balloon {
+    height: 230px;
+    filter: drop-shadow(3px 4px 4px #776e64);
+    animation: fly, shake;
+    animation-duration: 10s, 1s;
+    animation-iteration-count: 1, infinite;
+    animation-fill-mode: both;
+    transform-origin: top;
+  }
+}
+
+@keyframes fly {
+  from {
+    transform: none;
+  }
+
+  50% {
+  }
+
+  to {
+    transform: translateY(-900px);
+  }
+}
+
+@keyframes shake {
+}
