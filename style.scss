@@ -110,32 +110,112 @@ body {
 }
 
 .main {
-  height: 1000px;
   background-color: $color-tertiary-light;
+  background-image: url("./img/background.jpeg");
+  background-size: cover;
+  text-align: center;
+  padding: 5rem 2rem;
+  display: flex;
+  height: 130vh;
+  overflow: hidden;
+  flex-direction: column;
+  gap: 3rem;
 
   .balloon {
-    height: 230px;
+    position: absolute;
+    top: 0;
+    left: 5vw;
+    z-index: 100;
+    height: 12rem;
     filter: drop-shadow(3px 4px 4px #776e64);
-    animation: fly, shake;
-    animation-duration: 10s, 1s;
-    animation-iteration-count: 1, infinite;
-    animation-fill-mode: both;
+    animation: shake 4s infinite, fly 20s both;
     transform-origin: top;
+  }
+
+  .cloud {
+    position: absolute;
+    top: calc(600px - var(--scroll));
+    right: 5vw;
+    z-index: 0;
+    height: 8rem;
+    filter: drop-shadow(3px 4px 4px #776e64);
+  }
+
+  &__wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 6rem;
+
+    &--button {
+      border: none;
+      position: relative;
+      font-family: "Great Vibes";
+      font-weight: 600;
+      font-size: 4.5rem;
+      color: $color-primary;
+      background-color: transparent;
+    }
+  }
+
+  &__image {
+    position: relative;
+    &--yes {
+      width: 100%;
+      transform: translate(-500px);
+      transition: transform, 2s, both;
+      &.animate {
+        transform: translateX(0);
+      }
+    }
+
+    &--no {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(400px, -35px);
+      transition: transform, 2s, both;
+      &.animate {
+        transform: translate(0, -35px);
+      }
+    }
   }
 }
 
 @keyframes fly {
   from {
-    transform: none;
+    top: 500px;
   }
-
-  50% {
-  }
-
   to {
-    transform: translateY(-900px);
+    top: -1500px;
   }
 }
 
 @keyframes shake {
+  from,
+  to {
+    transform: rotate(8deg);
+  }
+  50% {
+    transform: rotate(-8deg);
+  }
+}
+
+@media screen and (min-width: 832px) {
+  body {
+    max-width: 830px;
+    margin: 0 auto;
+  }
+
+  .main {
+    padding: 10rem 10rem;
+
+    &__image--yes {
+      transform: translateX(-800px);
+    }
+    &__image--no {
+      transform: translateX(750px);
+    }
+  }
 }
