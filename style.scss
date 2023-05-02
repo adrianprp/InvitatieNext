@@ -131,6 +131,10 @@ body {
     transform-origin: top;
   }
 
+  img {
+    width: 100%;
+  }
+
   .cloud {
     position: absolute;
     top: calc(600px - var(--scroll));
