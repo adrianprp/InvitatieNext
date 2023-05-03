@@ -73,6 +73,7 @@ body {
   text-align: center;
   padding: 5rem 2rem;
   display: flex;
+  overflow: hidden;
   flex-direction: column;
   gap: 3rem;
   position: relative; }
@@ -85,13 +86,32 @@ body {
     filter: drop-shadow(3px 4px 4px #776e64);
     animation: shake 4s infinite, fly 20s both;
     transform-origin: top; }
-  .main .cloud {
+  .main__wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 6rem; }
+    .main__wrapper--button {
+      border: none;
+      position: relative;
+      font-family: "Great Vibes";
+      font-weight: 600;
+      font-size: 4.5rem;
+      color: #a7727c;
+      background-color: transparent; }
+  .main__image--yes {
+    width: 100%;
+    transform: translateX(-500px);
+    transition: all 0.8s ease-in-out; }
+    .main__image--yes.animate {
+      transform: translateX(0); }
+  .main__image--no {
+    height: 250px;
     position: absolute;
-    top: calc(600px - var(--scroll));
-    right: 5vw;
-    z-index: 0;
-    height: 8rem;
-    filter: drop-shadow(3px 4px 4px #776e64); }
+    transform: translateX(100px);
+    transition: all 0.8s ease-in-out; }
+    .main__image--no.animate {
+      transform: translateX(-140%); }
   .main small {
     margin-top: 5rem;
     text-align: left;
@@ -118,8 +138,4 @@ body {
   .main {
     padding: 10rem 10rem; }
     .main .balloon {
-      left: 35%; }
-    .main__image--yes {
-      transform: translateX(-800px); }
-    .main__image--no {
-      transform: translateX(750px); } }
+      left: 25%; } }

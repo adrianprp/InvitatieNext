@@ -7,8 +7,12 @@ const hoursEl = document.querySelector(".hero__counter--hours");
 const minsEl = document.querySelector(".hero__counter--mins");
 const secsEl = document.querySelector(".hero__counter--secs");
 const balloonEl = document.querySelector(".balloon");
+const yesBtn = document.querySelector(".yes");
+const noBtn = document.querySelector(".no");
+const yesImg = document.querySelector(".main__image--yes");
+const noImg = document.querySelector(".main__image--no");
 
-const DATE = new Date("08/01/2023");
+const DATE = new Date("08/25/2023");
 
 function App() {
   const now = new Date();
@@ -18,6 +22,15 @@ function App() {
       setCounter();
     }, 1000);
   }
+
+  yesBtn.addEventListener("click", () => {
+    yesImg.classList.add("animate");
+    noImg.classList.remove("animate");
+  });
+  noBtn.addEventListener("click", () => {
+    noImg.classList.add("animate");
+    yesImg.classList.remove("animate");
+  });
 }
 
 App();

@@ -116,6 +116,7 @@ body {
   text-align: center;
   padding: 5rem 2rem;
   display: flex;
+  overflow: hidden;
   flex-direction: column;
   gap: 3rem;
   position: relative;
@@ -131,17 +132,44 @@ body {
     transform-origin: top;
   }
 
-  img {
+  &__wrapper {
+    display: flex;
     width: 100%;
+    justify-content: space-around;
+    margin-top: 6rem;
+
+    &--button {
+      border: none;
+      position: relative;
+      font-family: "Great Vibes";
+      font-weight: 600;
+      font-size: 4.5rem;
+      color: $color-primary;
+      background-color: transparent;
+    }
   }
 
-  .cloud {
-    position: absolute;
-    top: calc(600px - var(--scroll));
-    right: 5vw;
-    z-index: 0;
-    height: 8rem;
-    filter: drop-shadow(3px 4px 4px #776e64);
+  &__image {
+    &--yes {
+      width: 100%;
+      transform: translateX(-500px);
+      transition: all 0.8s ease-in-out;
+
+      &.animate {
+        transform: translateX(0);
+      }
+    }
+
+    &--no {
+      height: 250px;
+      position: absolute;
+      transform: translateX(100px);
+      transition: all 0.8s ease-in-out;
+
+      &.animate {
+        transform: translateX(-140%);
+      }
+    }
   }
 
   small {
@@ -181,14 +209,7 @@ body {
     padding: 10rem 10rem;
 
     .balloon {
-      left: 35%;
-    }
-
-    &__image--yes {
-      transform: translateX(-800px);
-    }
-    &__image--no {
-      transform: translateX(750px);
+      left: 25%;
     }
   }
 }
