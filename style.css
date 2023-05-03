@@ -138,4 +138,10 @@ body {
   .main {
     padding: 10rem 10rem; }
     .main .balloon {
-      left: 25%; } }
+      left: 25%; }
+    .main__image--yes {
+      transform: translateX(-800px); }
+    .main__image--no {
+      height: 420px; }
+      .main__image--no.animate {
+        transform: translateX(-150%); } }

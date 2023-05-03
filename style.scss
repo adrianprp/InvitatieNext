@@ -211,5 +211,16 @@ body {
     .balloon {
       left: 25%;
     }
+
+    &__image--yes {
+      transform: translateX(-800px);
+    }
+    &__image--no {
+      height: 420px;
+
+      &.animate {
+        transform: translateX(-150%);
+      }
+    }
   }
 }
