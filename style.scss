@@ -151,7 +151,6 @@ body {
 
   &__image {
     &--yes {
-      width: 100%;
       transform: translateX(-500px);
       transition: all 0.8s ease-in-out;
 
@@ -161,9 +160,8 @@ body {
     }
 
     &--no {
-      height: 250px;
       position: absolute;
-      transform: translateX(100px);
+      transform: translateX(275px);
       transition: all 0.8s ease-in-out;
 
       &.animate {
@@ -213,13 +211,15 @@ body {
     }
 
     &__image--yes {
+      height: 420px;
+      width: auto;
       transform: translateX(-800px);
     }
     &__image--no {
       height: 420px;
-
+      width: auto;
       &.animate {
-        transform: translateX(-150%);
+        transform: translateX(-105%);
       }
     }
   }
