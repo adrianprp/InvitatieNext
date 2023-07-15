@@ -100,16 +100,20 @@ body {
       color: #a7727c;
       background-color: transparent; }
   .main__image--yes {
+    height: 420px;
+    width: auto;
     transform: translateX(-500px);
     transition: all 0.8s ease-in-out; }
     .main__image--yes.animate {
       transform: translateX(0); }
   .main__image--no {
+    width: auto;
+    height: 420px;
     position: absolute;
     transform: translateX(275px);
     transition: all 0.8s ease-in-out; }
     .main__image--no.animate {
-      transform: translateX(-140%); }
+      transform: translateX(-105%); }
   .main small {
     margin-top: 5rem;
     text-align: left;

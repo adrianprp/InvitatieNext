@@ -151,6 +151,8 @@ body {
 
   &__image {
     &--yes {
+      height: 420px;
+      width: auto;
       transform: translateX(-500px);
       transition: all 0.8s ease-in-out;
 
@@ -160,12 +162,14 @@ body {
     }
 
     &--no {
+      width: auto;
+      height: 420px;
       position: absolute;
       transform: translateX(275px);
       transition: all 0.8s ease-in-out;
 
       &.animate {
-        transform: translateX(-140%);
+        transform: translateX(-105%);
       }
     }
   }
